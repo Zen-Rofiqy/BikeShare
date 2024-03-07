@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dashboard *Bike Sharing Dataset* 🖥️📈
 
 ## Setup environment
@@ -11,3 +12,6 @@ pip install -r requirements.txt
 ```
 streamlit run MyDashBoard.py
 ```
+=======
+# BikeShare
+>>>>>>> e9ed79d9f013dcb1d748fe0c9a1a47ac23abe39b
