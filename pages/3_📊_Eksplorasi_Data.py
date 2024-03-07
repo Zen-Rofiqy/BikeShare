@@ -319,6 +319,8 @@ with col1:
     # Menghitung jumlah hari kerja/weekday
     weekday_count = dw_df[(dw_df['holiday'] == '-') & (dw_df['workingday'] == 'WeekDay')].shape[0] + dw_df[(dw_df['holiday'] == 'Libur') & (dw_df['workingday'] == 'WeekDay')].shape[0]
 
+    st.dataframe(holiday_weekend_count)
+    st.dataframe(weekday_count)
     # Membuat Pie Chart
     fig, ax = plt.subplots(figsize=(8, 8))
 
