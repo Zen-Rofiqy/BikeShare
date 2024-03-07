@@ -315,7 +315,7 @@ with col1:
     st.markdown("**Banyaknya Hari kerja dan Hari libur**")
     
     # Streamlit cloud ada masalha dalam operasi bool
-    # Encoding bool jadi 0 1
+    # Encoding bool jadi 0 1 dan jadikan float
     dw_df['holiday_encoded'] = dw_df['holiday'].replace({'Libur': 1, '-': 0}).astype(float)
     dw_df['workingday_encoded'] = dw_df['workingday'].replace({'WeekEnd': 1, 'WeekDay': 0}).astype(float)
 
@@ -324,10 +324,6 @@ with col1:
     
     # Menghitung jumlah hari kerja/weekday
     weekday_count = dw_df[(dw_df['holiday_encoded'] == 0) & (dw_df['workingday_encoded'] == 0)].shape[0]
-
-    # Menampilkan nilai perhitungan
-    st.write("Jumlah hari libur & weekend:", holiday_weekend_count)
-    st.write("Jumlah hari kerja/weekday:", weekday_count)
 
     # Membuat Pie Chart
     fig, ax = plt.subplots(figsize=(8, 8))
