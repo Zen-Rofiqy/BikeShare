@@ -495,7 +495,6 @@ with st.expander("Insight pola penyewaan sepeda"):
 st.write("\n\n")
 st.subheader('Matriks Korelasi')
 df = dw_df.iloc[:, 10:16]
-st.dataframe(df)
 
 # Plot heatmap
 def corrfunc(x, y, **kws):
