@@ -313,18 +313,17 @@ st.subheader('Sepeda yang Disewa pada Hari Libur dan Hari Kerja')
 col1, col2= st.columns(2)
 with col1:
     st.markdown("**Banyaknya Hari kerja dan Hari libur**")
-    # Menghitung jumlah hari libur & weekend
-
-    st.dataframe((dw_df['holiday'] == 'Libur').astype(float))
     
-    st.dataframe((dw_df['workingday'] == 'WeekEnd').astype(float))
+    # Streamlit cloud ada masalha dalam operasi bool
+    # Encoding bool jadi 0 1
+    dw_df['holiday_encoded'] = dw_df['holiday'].replace({'Libur': 1, '-': 0})
+    dw_df['workingday_encoded'] = dw_df['workingday'].replace({'WeekEnd': 1, 'WeekDay': 0})
 
-    st.dataframe(dw_df[(dw_df['holiday'] == 'Libur') & (dw_df['workingday'] == 'WeekEnd')])
-
-    holiday_weekend_count = dw_df[(dw_df['holiday'] == 'Libur').astype(bool) & (dw_df['workingday'] == 'WeekEnd').astype(bool)].shape[0] + dw_df[(dw_df['holiday'] == '-').astype(bool) & (dw_df['workingday'] == 'WeekEnd').astype(bool)].shape[0]
-
+    # Menghitung jumlah hari libur & weekend
+    holiday_weekend_count = dw_df[(dw_df['holiday_encoded'] == 1) & (dw_df['workingday_encoded'] == 1)].shape[0]
+    
     # Menghitung jumlah hari kerja/weekday
-    weekday_count = dw_df[(dw_df['holiday'] == '-') & (dw_df['workingday'] == 'WeekDay')].shape[0] + dw_df[(dw_df['holiday'] == 'Libur') & (dw_df['workingday'] == 'WeekDay')].shape[0]
+    weekday_count = dw_df[(dw_df['holiday_encoded'] == 0) & (dw_df['workingday_encoded'] == 0)].shape[0]
 
     # Menampilkan nilai perhitungan
     st.write("Jumlah hari libur & weekend:", holiday_weekend_count)
