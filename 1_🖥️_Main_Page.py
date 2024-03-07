@@ -1,4 +1,4 @@
-# streamlit run "1_🖥️_Main Page.py"
+# streamlit run "1_🖥️_Main_Page.py"
 # IMPORT
 import numpy as np
 import pandas as pd
