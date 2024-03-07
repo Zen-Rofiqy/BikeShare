@@ -316,8 +316,8 @@ with col1:
     
     # Streamlit cloud ada masalha dalam operasi bool
     # Encoding bool jadi 0 1
-    dw_df['holiday_encoded'] = dw_df['holiday'].replace({'Libur': 1, '-': 0})
-    dw_df['workingday_encoded'] = dw_df['workingday'].replace({'WeekEnd': 1, 'WeekDay': 0})
+    dw_df['holiday_encoded'] = dw_df['holiday'].replace({'Libur': 1, '-': 0}).astype(float)
+    dw_df['workingday_encoded'] = dw_df['workingday'].replace({'WeekEnd': 1, 'WeekDay': 0}).astype(float)
 
     # Menghitung jumlah hari libur & weekend
     holiday_weekend_count = dw_df[(dw_df['holiday_encoded'] == 1) & (dw_df['workingday_encoded'] == 1)].shape[0]
