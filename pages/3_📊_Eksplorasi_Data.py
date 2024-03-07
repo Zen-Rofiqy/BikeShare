@@ -327,8 +327,12 @@ with col1:
     sizes = [holiday_weekend_count, weekday_count]
     colors = ['#dddddd', '#1380A1']
 
-    # Menampilkan pie chart
-    wedges, texts, autotexts = ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+    # Pengecekan nilai sizes
+    if sum(sizes) == 0:
+        st.warning("Tidak ada data untuk ditampilkan.")
+    else:
+        # Menampilkan pie chart
+        wedges, texts, autotexts = ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
 
     # Menambahkan frekuensi di sebelah label
     for i, label in enumerate(labels):
@@ -362,8 +366,12 @@ with col2:
     sizes = [holiday_weekend / holiday_weekend_count, weekday_weekend / weekday_count]
     colors = ['#dddddd', '#1380A1']
 
-    # Menampilkan pie chart
-    wedges, texts, autotexts = ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+    # Pengecekan nilai sizes
+    if any(size < 0 for size in sizes):
+        st.warning("Nilai negatif tidak valid untuk membuat pie chart.")
+    else:
+        # Menampilkan pie chart
+        wedges, texts, autotexts = ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
 
     # Menambahkan frekuensi di sebelah label
     for i, label in enumerate(labels):
