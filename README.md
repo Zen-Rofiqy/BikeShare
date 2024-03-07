@@ -9,5 +9,5 @@ pip install -r requirements.txt
 
 ## Run steamlit app
 ```
-streamlit run "1_🖥️_Main Page.py
+streamlit run "1_🖥️_Main Page.py"
 ```
