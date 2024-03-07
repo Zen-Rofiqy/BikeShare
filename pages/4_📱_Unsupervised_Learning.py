@@ -167,7 +167,7 @@ kmeans = KMeans(init="random", n_clusters=2, n_init=10, random_state=1)
 kmeans.fit(scaled_df)
 
 #append cluster assingments to original DataFrame
-km_data = dw_df
+km_data = dw_df.drop(['holiday_encoded', 'workingday_encoded'], axis=1)
 km_data['cluster'] = kmeans.labels_
 
 col = km_data.pop('cluster')
