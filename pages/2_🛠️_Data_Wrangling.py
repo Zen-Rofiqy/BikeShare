@@ -91,7 +91,7 @@ st.subheader("Assessing Data")
 st.caption(
     """
     Sebagai permulaan, kita memeriksa tipe data data dari tiap kolom yang terdapat dalam `day_df`. 
-    Proses ini dapat dilakukan menggunakan method `day_df.info()`.
+    Proses ini dapat dilakukan menggunakan method `.info()`.
     Berikut merupakan tampilan dari data awal.
     """
 )
