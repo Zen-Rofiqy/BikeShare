@@ -315,14 +315,13 @@ with col1:
     st.markdown("**Banyaknya Hari kerja dan Hari libur**")
     # Menghitung jumlah hari libur & weekend
 
-    st.dataframe(dw_df['holiday'] == 'Libur')
+    st.dataframe((dw_df['holiday'] == 'Libur').astype(float))
     
-    st.dataframe(dw_df['workingday'] == 'WeekEnd')
+    st.dataframe((dw_df['workingday'] == 'WeekEnd').astype(float))
 
     st.dataframe(dw_df[(dw_df['holiday'] == 'Libur') & (dw_df['workingday'] == 'WeekEnd')])
 
-    holiday_weekend_count = dw_df[(dw_df['holiday'] == 'Libur') & (dw_df['workingday'] == 'WeekEnd')].shape[0] + dw_df[(dw_df['holiday'] == '-') & (dw_df['workingday'] == 'WeekEnd')].shape[0]
-
+    holiday_weekend_count = dw_df[(dw_df['holiday'] == 'Libur').astype(bool) & (dw_df['workingday'] == 'WeekEnd').astype(bool)].shape[0] + dw_df[(dw_df['holiday'] == '-').astype(bool) & (dw_df['workingday'] == 'WeekEnd').astype(bool)].shape[0]
 
     # Menghitung jumlah hari kerja/weekday
     weekday_count = dw_df[(dw_df['holiday'] == '-') & (dw_df['workingday'] == 'WeekDay')].shape[0] + dw_df[(dw_df['holiday'] == 'Libur') & (dw_df['workingday'] == 'WeekDay')].shape[0]
