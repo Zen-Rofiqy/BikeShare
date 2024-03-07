@@ -494,7 +494,7 @@ with st.expander("Insight pola penyewaan sepeda"):
 # Matriks Korelasi 
 st.write("\n\n")
 st.subheader('Matriks Korelasi')
-df = dw_df.iloc[:, -7:]
+df = dw_df.iloc[:, 10:16]
 st.dataframe(df)
 
 # Plot heatmap
