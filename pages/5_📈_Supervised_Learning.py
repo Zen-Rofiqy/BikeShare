@@ -98,7 +98,7 @@ st.write(
     """
 )
 
-st.dataframe(dw_df.drop(['dteday', 'instant'], axis=1))
+st.dataframe(dw_df.drop(['dteday', 'instant', 'holiday_encoded', 'workingday_encoded'], axis=1))
 st.caption(
     """
     Terlihat bahwa ada beberapa data yang kategorik, jadi Data akan dibuat dummy variable dulu
