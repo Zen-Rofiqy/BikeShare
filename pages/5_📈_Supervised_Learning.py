@@ -107,7 +107,7 @@ st.caption(
 )
 
 #Dummy
-dw_dummy = pd.get_dummies(dw_df.drop(['dteday', 'instant'], axis=1), drop_first=True).astype(float)
+dw_dummy = pd.get_dummies(dw_df.drop(['dteday', 'instant', 'holiday_encoded', 'workingday_encoded'], axis=1), drop_first=True).astype(float)
 
 with st.expander("Hasil Dummy Variable"):
     st.dataframe(dw_dummy)  
