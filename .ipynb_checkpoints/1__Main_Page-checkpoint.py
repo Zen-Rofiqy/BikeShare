@@ -27,7 +27,7 @@ st.set_page_config(
 )
 # Judul
 st.markdown("<h2 style='text-align: center; color: white;'>Analisis <i>Pengaruh</i> Kondisi <i>Lingkungan</i> dan <i>Musim</i> Terhadap Tren <i>Penyewaan Sepeda</i>: Studi Kasus Sistem Capital Bikeshare di Washington D.C.</h2>", unsafe_allow_html=True)
-st.image('https://cdn.discordapp.com/attachments/763214382020558858/1214663023310934067/fileKC_Bikes-1024x683.jpg?ex=65f9ee18&is=65e77918&hm=ab8a90a2602c0d6ce28e6c774f649f4f74b087497aed66ea00d2ea2f7824daf3&') 
+st.image('https://raw.githubusercontent.com/Zen-Rofiqy/BikeShare/refs/heads/main/images/Headerr.jpg') 
 st.markdown("---")
 # DATA
 day_df = pd.read_csv("https://raw.githubusercontent.com/Zen-Rofiqy/BikeShare/refs/heads/main/Data/day.csv")
