@@ -68,7 +68,7 @@ image = ImageOps.fit(image, mask.size, centering=(0.5, 0.5))
 image.putalpha(mask)
 
 # Menampilkan gambar di sidebar
-st.sidebar.image(image, use_column_width=True)
+st.sidebar.image(image, use_container_width=True)
 st.sidebar.markdown(
     """
     <div>
