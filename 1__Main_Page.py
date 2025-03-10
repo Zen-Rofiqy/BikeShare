@@ -30,7 +30,7 @@ st.markdown("<h2 style='text-align: center; color: white;'>Analisis <i>Pengaruh<
 st.image('https://cdn.discordapp.com/attachments/763214382020558858/1214663023310934067/fileKC_Bikes-1024x683.jpg?ex=65f9ee18&is=65e77918&hm=ab8a90a2602c0d6ce28e6c774f649f4f74b087497aed66ea00d2ea2f7824daf3&') 
 st.markdown("---")
 # DATA
-day_df = pd.read_csv("https://raw.githubusercontent.com/Zen-Rofiqy/Bangkit-2024/main/04%20Analisis%20Data%20dng%20Py/%40Proyek-akhir/Bike-sharing-dataset/day.csv")
+day_df = pd.read_csv("https://raw.githubusercontent.com/Zen-Rofiqy/BikeShare/refs/heads/main/Data/day.csv")
 day_df.head(n=10)
 
 st.session_state["day_df"] = day_df
@@ -93,7 +93,8 @@ image = ImageOps.fit(image, mask.size, centering=(0.5, 0.5))
 image.putalpha(mask)
 
 # Menampilkan gambar di sidebar
-st.sidebar.image(image, use_column_width=True)
+st.sidebar.image(image, use_container_width=True)
+
 st.sidebar.markdown(
     """
     <div>
